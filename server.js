@@ -26,6 +26,7 @@ http.createServer(function (request, response) {
     case '/':
       response.statusCode = 200;
       response.setHeader('Content-Type', 'text/html');
+      response.setHeader('Set-Cookie', 'shoppingcart=item1,item2,item3');
       var content = fs.readFileSync('app/app.html');
       response.end(content + '\n');
       break;
