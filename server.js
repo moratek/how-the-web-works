@@ -48,6 +48,10 @@ http.createServer(function (request, response) {
       response.setHeader('Content-Type', 'text/html');
       response.end();
       break;
+    default:
+      response.statusCode = 404;
+      response.statusMessage = "Not found";
+      response.end();
   }
 }).listen(3000);
 
